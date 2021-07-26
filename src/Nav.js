@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {faShoppingBasket, faTruck} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Nav = () => {
+const Nav = ({change}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
       <div className="container">
@@ -22,7 +22,7 @@ const Nav = () => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav mx-5">
             <li className="nav-item">
-            <Link to="/Orders" className="nav-link active text-warning" aria-current="page"><FontAwesomeIcon  icon={faShoppingBasket} /> Your Orders</Link>
+            <Link to="/Orders" className="nav-link active text-warning" aria-current="page" onClick={(event) => change(event.target.value)}><FontAwesomeIcon  icon={faShoppingBasket} /> Your Orders</Link>
             </li>
           </ul>
         </div>

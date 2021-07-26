@@ -16,29 +16,35 @@ const App = () => {
     { itemName: "Chicken Wings", key: 4, quantity: 1, price: 10, isSelected: false , imgPath: chickenWings },
   ]);
   const [selectedOrders , setselectedOrders] = useState([]);
-  // const [inputValue, setInputValue] = useState("");
-  // const [totalItemCount, setTotalItemCount] = useState(6);
+  const [removeOrder, setremoveOrder] = useState([]);
 
   const changeSelectItem = (index) => {
 		const newItems = [...items];
 
 		newItems[index].isSelected = !newItems[index].isSelected;
-
 		setItems(newItems);
 	};
 
-  const addToYourOrders = () => {
+  const addToYourOrders = (index) => {
 		const newItems = [...items];
 
-    setselectedOrders(newItems.filter(order => order.isSelected).map(filteredOrder => (console.log(filteredOrder))));
+    const newArr = newItems.filter(person => person.isSelected)
+    setselectedOrders(newArr);
 	};
 
-//  addToYourOrders();
+  const changeSelectOrder = (index) => {
+		const newItems = [...selectedOrders];
+
+		newItems[index].isSelected = !newItems[index].isSelected;
+		setremoveOrder(newItems);
+    setselectedOrders(newItems);
+	};
+
   
 
   return (
     <>
-      <Nav />
+      <Nav change={() => addToYourOrders()} />
       <Switch>
         <Route path="/" exact={true} >
           <div className="order-container my-5 mx-auto">
@@ -49,8 +55,8 @@ const App = () => {
         </Route>
         <Route path="/Orders" component={Orders}>
         <div className="order-basket my-5 mx-auto">
-        {selectedOrders.map((item) => (
-              <Orders  key={item.key} {...item}/>))}
+        {selectedOrders.map((item, index) => (
+              <Orders removeOrder={removeOrder} click={() => changeSelectOrder(index)} key={item.key} {...item}/>))}
           </div>
           </Route>
       </Switch>
