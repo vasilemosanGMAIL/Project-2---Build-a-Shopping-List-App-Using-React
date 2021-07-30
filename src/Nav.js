@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import {faShoppingBasket, faTruck} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faShoppingBasket, faTruck} from '@fortawesome/free-solid-svg-icons'
+
 
 const Nav = ({change}) => {
   return (

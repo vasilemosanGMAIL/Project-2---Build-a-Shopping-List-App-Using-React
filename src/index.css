@@ -18,3 +18,15 @@
   border: 2px solid #a62e32;
   border-radius: 5px;
 }
+
+.quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dc3545;
+  background: #dc3545;
+  border-radius: 15px;
+  font-size: 18px;
+  color: #ffff;
+  min-width: 50px;
+  justify-content: space-between;
+}
