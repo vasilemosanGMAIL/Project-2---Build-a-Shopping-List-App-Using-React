@@ -1,5 +1,3 @@
-import React from "react";
-
 const Items = ({ itemName, price, imgPath,  click }) => {
   return (
     <div className="card my-2 mx-2" style={{width: "18rem"}}>

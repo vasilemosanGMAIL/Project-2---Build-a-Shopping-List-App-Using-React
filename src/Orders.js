@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
@@ -10,8 +9,7 @@ const Orders = ({
   quantity,
   price,
   imgPath,
-  change,
-  click,
+  ordClick,
   handleQuantityDecrease,
   handleQuantityIncrease,
 }) => {
@@ -37,7 +35,7 @@ const Orders = ({
         </div>
         <p className="card-text">Price {price} MDL</p>
         <button
-          onClick={click}
+          onClick={ordClick}
           type="button"
           className="btn btn-outline-danger"
         >
