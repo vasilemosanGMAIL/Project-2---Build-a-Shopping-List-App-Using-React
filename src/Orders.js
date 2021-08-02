@@ -14,10 +14,10 @@ const Orders = ({
   handleQuantityIncrease,
 }) => {
   return (
-    <div className="card my-2 mx-2" style={{ width: "18rem" }}>
+    <div className="card my-2 mx-2" style={{ width: "15rem" }}>
       <img src={imgPath} className="card-img-top" alt="..." />
       <div className="card-body">
-        <h5 className="card-title">{itemName}</h5>
+        <h6 className="card-title">{itemName}</h6>
         <div className="quantity">
           <p className="my-0">
             <FontAwesomeIcon

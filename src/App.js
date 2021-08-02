@@ -63,6 +63,7 @@ const App = () => {
 
     const newOrd = newOrders.filter((arr) => arr.isSelected);
     setselectedOrders(newOrd);
+    items.isSelected = !items.isSelected;
   };
 
   const changeSelectOrder = (index) => {
@@ -124,17 +125,15 @@ const App = () => {
             ))}
           </div>
         </Route>
-        <Route path="/Orders" render={() => <Orders />}>
+        <Route path="/Orders">
           <div className="order-basket my-5 mx-auto">
-            {selectedOrders.map((item, index) => (
+            {selectedOrders.map((orditem, index) => (
               <Orders
                 handleQuantityDecrease={() => handleQuantityDecrease(index)}
                 handleQuantityIncrease={() => handleQuantityIncrease(index)}
                 ordClick={() => changeSelectOrder(index)}
-                // CALC={() => calculateTotal()}
-                calculateTotal
-                key={item.key}
-                {...item}
+                key={orditem.key}
+                {...orditem}
               />
             ))}
           </div>
