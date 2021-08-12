@@ -68,8 +68,11 @@ const App = () => {
 
   const changeSelectOrder = (index) => {
     const rmItems = [...selectedOrders];
+    const defaultQuantity = 1;
 
     rmItems[index].isSelected = !rmItems[index].isSelected;
+    rmItems[index].quantity = defaultQuantity;
+    rmItems[index].price = rmItems[index].priceforOneItem;
     const remOrder = rmItems.filter((arr) => arr.isSelected);
 
     setselectedOrders(remOrder);
