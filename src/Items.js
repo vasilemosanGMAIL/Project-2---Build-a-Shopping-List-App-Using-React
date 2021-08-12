@@ -5,7 +5,7 @@ const Items = ({ itemName, priceforOneItem, imgPath,  click, isSelected }) => {
       <div className="card-body">
         <h6 className="card-title">{itemName}</h6>
         <p className="card-text">{priceforOneItem} MDL</p>
-        <button onClick={click} type="button" className="btn btn-outline-success">{isSelected ? "Remove Order" : "Order" }</button>
+        <button onClick={click} type="button" className="btn btn-outline-success">{isSelected ? "Already Ordered" : "Order" }</button>
       </div>
     </div>
   );

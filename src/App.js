@@ -54,7 +54,7 @@ const App = () => {
   const changeSelectItem = (index) => {
     const newItems = [...items];
 
-    newItems[index].isSelected = !newItems[index].isSelected;
+    newItems[index].isSelected = true;
     setItems(newItems);
   };
 
